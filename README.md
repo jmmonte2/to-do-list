@@ -7,3 +7,10 @@
 
 # To Do List
 To Do List is CRUD web application that includes a login system and allows users to create a list of tasks.
+
+## Technologies Used
+* Python
+* HTML
+* CSS
+* SQLite
+* Git
