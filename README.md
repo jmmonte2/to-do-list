@@ -1,6 +1,7 @@
 <p align="center">
 <img src="https://github.com/jmmonte2/to-do-list/blob/main/website/readme/Home.png" height="300"
      />
+ <br>
  <img src="https://github.com/jmmonte2/to-do-list/blob/main/website/readme/Login.png" height="300"
      />
 </p>
