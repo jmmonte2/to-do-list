@@ -24,17 +24,14 @@ def login():
         if email == "" and password == "":
             return render_template("login.html", empty_email=True, empty_password=True)
 
-        # if user not registered
         else:
             if user:
                 if check_password_hash(user.password, password):
                     login_user(user, remember=True)
                     return redirect(url_for('views.home'))
                 else:
-                    print('esfesf')
                     return render_template("login.html", user=user)
             else:
-                print("314")
                 return render_template("login.html")
     
     else: 
