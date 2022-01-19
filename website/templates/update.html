@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Update Task{% endblock %}
+
+{% block content %}
+
+   
+<div class="mynav">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-name" href="#">Welcome {{ current_user.first_name }}</a>
+        <button 
+            class="navbar-toggler"
+            type="button" 
+            data-toggle="collapse"
+            data-target="#navbar">
+            <span class="navbar-toggler-icon"></span>    
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="/home">Home</a>
+                <a class="nav-item nav-link" id="signout" href="/login">Sign out</a>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="flexboxcon-wel">
+    <div class="wel-item">
+        <div class="taskinfo">
+            <h4>Task to be updated</h4>
+            <form method="POST">
+                <input
+                    type="text"
+                    class="form-control"
+                    name="task"
+                    value="{{task.item_info}}"
+                />
+                <button 
+                    type="submit" 
+                    id="update" 
+                    class="btn btn-primary btn-sm">Update
+                </button>
+                {% if task_empty and request.method == "POST" %}
+                <br>
+                <a>*Task must be at least 1 character</a>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

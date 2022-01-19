@@ -1,0 +1,151 @@
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family:'Source Sans Pro', sans-serif;
+}
+
+
+/* Login Page */
+
+.flexboxcon-login {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-item {
+    width: 300px;
+    max-width: 300px;
+    background-color:white;
+    box-shadow: 0 0 100px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    padding: 25px 35px 25px 35px;
+}
+
+.login-text {
+    text-align: center;
+}
+
+.error {
+    font-size: 12px;
+    color: red;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.col {
+    font-size: 12px;
+}
+.info {
+    color:black
+}
+
+
+/* Sign Up Page */
+
+.flexboxcon-signup {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:white;
+}
+.signup-item {
+    width: 350px;
+    max-width: 350px;
+    background-color:white;
+    box-shadow: 0 0 100px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    padding: 25px 35px 25px 35px;
+}
+.sign-text {
+    text-align: center;
+}
+
+
+/* Welcome Page */
+
+.flexboxcon-wel {
+    height: 100vh;
+    display: flex;
+    width: 100%;
+    background-color:white;
+    align-items: flex-start;
+    justify-content: space-around;
+    
+}
+
+.taskinfo {
+    padding: 20px 10px 20px 10px;
+    text-align: center;
+  
+}
+
+.wel-item {
+    width: 500px;
+    max-width: 500px;
+    background-color:white;
+    box-shadow: 0 0 100px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    padding: 0px 35px 25px 35px;
+    margin-top: 30px;
+}
+.stat-item {
+    width: 250px;
+    max-width: 250px;
+    background-color:white;
+    box-shadow: 0 0 100px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    padding: 20px 35px 20px 35px;
+    margin-top: 30px;
+    text-align: center;
+  
+}
+h6 {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.stat {
+    text-indent: 0px;
+}
+
+.is-breakable {
+    word-break: break-word;
+}
+
+
+
+
+.navbar .navbar-nav {
+    margin-left: auto;
+
+
+}
+.nav-item {
+    color:white !important
+}
+
+.navbar{
+    background-color: black !important;
+    
+    
+}
+.navbar .navbar-name {
+    color:white !important;
+}
+.navbar-toggler {
+    background-color: white;
+}
+
+#task-buttons{
+    float:right
+}
+
+.btn-sm {
+    margin-top: 10px;
+}

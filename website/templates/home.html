@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+    
+<div class="mynav">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-name" href="#">Welcome {{ current_user.first_name }}</a>
+        <button 
+            class="navbar-toggler"
+            type="button" 
+            data-toggle="collapse"
+            data-target="#navbar">
+            <span class="navbar-toggler-icon"></span>    
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" id="signout" href="/login">Sign out</a>
+            </div>
+        </div>
+    </nav>
+</div>
+    
+
+
+
+
+
+
+<div class="flexboxcon-wel">
+    <div class="wel-item">
+        <div class="taskinfo">
+            <form method="POST">
+                <input
+                    type="text"
+                    class="form-control"
+                    name="task"
+                    placeholder="Enter Task"
+                />
+                <button type="submit" id="submit-Wel" class="btn btn-primary btn-sm">Submit</button>
+                {% if task_empty and request.method == "POST" %}
+                <br>
+                <a>*Task must be at least 1 character</a>
+                {% endif %}
+            </form>
+        </div>
+        <br>  
+
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                <th scope="col">Task</th>
+                <th scope="col">Action</th>
+                </tr>
+            </thead>    
+            {% for task in tasks %}
+                <tr>
+                    <td class="is-breakable">
+                        {{ task.item_info }}
+                    </td>
+                    <td>
+                        <a class="btn btn-outline-primary" href="/update/{{task.id}}" >Update</a>
+                        <br>
+                        <a class="btn btn-outline-primary" href="/delete/{{task.id}}">Completed</a>
+                        
+                    </td>
+                </tr>    
+            {% endfor %}
+        </table>
+    </div>
+    <div class="stat-item">
+
+        <h6 class="title-stats"><u>Overview</u></h6>
+        <p>Total Task: {{ task_count }}
+            <br>Overall Completed: {{ completed_count }}
+        </p>
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<div class="flexboxcon-signup">
+<form method="POST">
+    <div class="signup-item">
+        <h3 class=sign-text>Sign Up</h3>
+        <div id="div2" class="form-group">
+            <input
+            type="text"
+            class="form-control"
+            id="firstName"
+            name="firstName"
+            placeholder="First name"
+            />    
+
+        </div>
+        <div id="div1" class="form-group">
+            <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="Email"
+            />    
+
+        </div>
+        <div class="form-group">
+            <input
+            type="password"
+            class="form-control"
+            id="password1"
+            name="password1"
+            placeholder="Password (8 or more characters)"
+            />    
+
+        </div>
+        <div class="form-group">
+            <input
+            type="password"
+            class="form-control"
+            id="password2"
+            name="password2"
+            placeholder="Confirm password"
+            />
+            
+        </div>
+
+        <div class="col text-center">
+        <p>
+            <a id="info">Already have an account?</a>
+            <a href="/login">Sign-In</a>
+        </p>
+        </div>
+
+        {% if not name_valid and request.method == "POST" %}
+        <p class="error">*First name must be at least 2 characters</p>
+        {% elif email_empty and request.method == "POST" %}
+        <p class="error">*Enter email</p>
+        {% elif not password_valid and request.method == "POST" %}
+        <p class="error">*Password needs to be at least 8 characters</p>
+        {% elif password_dmatch and request.method == "POST" %}
+        <p class="error">*Passwords do not match</p>
+        {% elif email_exist and request.method == "POST" %}
+        <p class="error">*Email already taken.</p>
+        {% endif %}
+        <button type="submit" id="submitButton" class="btn btn-primary btn-block">Submit</button>
+    </div>
+</form>
+</div>
+
+{% endblock %}

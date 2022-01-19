@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock %}
+
+
+{% block content %}
+<div class="flexboxcon-login">
+<form method="POST">
+    <div class="login-item">
+        <h3 class=login-text>Login</h3>
+        <div id="div1" class="form-group">
+            <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="Email"
+            />    
+        </div>
+        <div class="form-group">
+            <input
+            type="password"
+            class="form-control"
+            id="password"
+            name="password"
+            placeholder="Password"
+            />   
+        </div>
+        <p class="col text-center">
+            <a class="info">New user?</a>
+            <a href="/sign-up">Create account</a>
+        </p>
+        
+        {% if (empty_email and empty_password) and request.method == "POST" %}
+        <p class="error">*Please enter email</p>
+        <p class="error">*Please enter password</p>
+        {% elif not user and request.method == "POST" %}
+        <p class="error">*Email is not registered</p>
+        {% elif user and request.method == "POST" %}
+        <p class="error">*The password you’ve entered is incorrect</p>
+        {% endif %}
+    
+        <button type="submit" id="submitButton" class="btn btn-primary btn-block">Submit</button>
+       
+    </div>    
+</form>
+</div>
+{% endblock %}
