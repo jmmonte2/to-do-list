@@ -5,5 +5,5 @@
      />
 </p>
 
-# to-do-list
-Python web application that includes a login system and allows users to create a do to list
+# To Do List
+To Do List is CRUD web application that includes a login system and allows users to create a list of tasks.
